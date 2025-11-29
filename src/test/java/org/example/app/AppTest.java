@@ -6,6 +6,7 @@ import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -26,10 +27,10 @@ public class AppTest {
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
-        capabilities.setCapability("appium:deviceName","pixel_3a");
+        capabilities.setCapability("appium:deviceName","RZCY41NHX7W");
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("appium:automationName","uiautomator2");
-        capabilities.setCapability("appium:platformVersion", "14");
+        capabilities.setCapability("appium:platformVersion", "16");
 
         capabilities.setCapability("appium:appPackage", "com.offline.expenso");
         capabilities.setCapability(  "appium:appActivity", "com.offline.expenso.presentation.ui.activities.DashboardActivity");
@@ -54,8 +55,10 @@ public class AppTest {
         System.out.println("Application started!!");
 
 
+    }
 
-
-
+    @AfterClass
+    public void closeDriver(){
+        driver.quit();
     }
 }
