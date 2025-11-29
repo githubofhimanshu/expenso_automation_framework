@@ -26,13 +26,13 @@ public class AppTest {
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
-        capabilities.setCapability("appium:deviceName","pixel_3a");
+        capabilities.setCapability("appium:deviceName", "pixel_3a");
         capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("appium:automationName","uiautomator2");
+        capabilities.setCapability("appium:automationName", "uiautomator2");
         capabilities.setCapability("appium:platformVersion", "14");
 
         capabilities.setCapability("appium:appPackage", "com.offline.expenso");
-        capabilities.setCapability(  "appium:appActivity", "com.offline.expenso.presentation.ui.activities.DashboardActivity");
+        capabilities.setCapability("appium:appActivity", "com.offline.expenso.presentation.ui.activities.DashboardActivity");
 
         URL url = URI.create("http://127.0.0.1:4723/").toURL();
 
@@ -45,16 +45,13 @@ public class AppTest {
         Thread.sleep(2000);
         WebElement register = driver.findElement(By.xpath("//android.widget.TextView[@text=\"REGISTER\"]"));
         register.click();
-        System.out.println("register button clicked = " +register.getText());
-        System.out.println("register button clicked = " );
+        System.out.println("register button clicked = " + register.getText());
+        System.out.println("register button clicked = ");
 //        String packageName = "io.appium.android.apis";
 
 //        driver.terminateApp(packageName);
 //        driver.get("https://github.com/appium/appium-desktop/releases");
         System.out.println("Application started!!");
-
-
-
 
 
     }
